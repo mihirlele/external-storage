@@ -27,13 +27,13 @@ spec:
               mountPath: /persistentvolumes
           env:
             - name: PROVISIONER_NAME
-              value: fuseim.pri/ifs
+              value: example.com/nfs
             - name: NFS_SERVER
-              value: 10.10.10.60
+              value: vm254-122.gsslab.pnq2.redhat.com
             - name: NFS_PATH
-              value: /ifs/kubernetes
+              value: /opt/nfs
       volumes:
         - name: nfs-client-root
           nfs:
-            server: 10.10.10.60
-            path: /ifs/kubernetes
+            server: vm254-122.gsslab.pnq2.redhat.com
+            path: /opt/nfs
